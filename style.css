@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	background-color: bisque;
+}
+
+header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+}
+
+.menu {
+	height: 60px;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.homo {
+	text-decoration: none;
+	font-size: 26px;
+	font-weight: 700;
+	color: #bebebe;
+}
+
+input {
+	display: none;
+}
+
+.homo span {
+	color: #59270e;
+}
+
+label {
+	display: block;
+	height: 60px;
+	width: 60px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+label::before {
+	content: '';
+	position: absolute;
+	width: 32px;
+	height: 2px;
+	background-color: #000;
+	box-shadow: 0 10px #000;
+	transform: translateY(-10px);
+	transition: all 0.4s;
+}
+
+label::after {
+	content: '';
+	position: absolute;
+	width: 32px;
+	height: 2px;
+	background-color: #000;
+	transform: translateY(10px);
+	transition: all 0.4s;
+}
+
+input:checked ~ label::before {
+	transform: rotate(135deg) translateY(0);
+	box-shadow: 0 0 transparent;
+}
+
+
+input:checked ~ label::after {
+	transform: rotate(-135deg) translateY(0);
+}
+
+.unrollmenu {
+	width: 100%;
+	background-color: #fff;
+	padding: 0 20px;
+	height: 0;
+	overflow: hidden;
+	transition: all 0.4s;
+}
+
+li {
+	margin-bottom: 0;
+	transition: all 0.4s;
+}
+
+.rolllist {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.item {
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: 500;
+	color: transparent;
+	transition: all 0.4s;
+}
+
+input:checked ~ .unrollmenu {
+	height: auto;
+	padding: 40px 20px;
+
+}
+
+input:checked ~ .unrollmenu .rolllist li .item {
+ color: #000;
+
+}
+
+
+input:checked ~ .unrollmenu .rolllist li {
+	margin-bottom: 40px;
+
+}
